@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <LandingPage/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import UIkit from 'uikit'
+import Icons from 'uikit/dist/js/uikit-icons'
+import LandingPage from './pages/LandingPage.vue'
+
+UIkit.use(Icons)
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    LandingPage
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+<style lang="less">
+@import "../node_modules/uikit/src/less/uikit.less";
 </style>
