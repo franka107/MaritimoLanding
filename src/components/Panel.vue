@@ -40,6 +40,7 @@ export default {
           'small',
           'medium',
           'large',
+          'auto'
         ].indexOf(value) !== -1
       }
     },
@@ -62,5 +63,9 @@ export default {
 
 .uk-background-blue {
   background-color: blue;
+}
+
+.uk-height-auto {
+    height: auto;
 }
 </style>

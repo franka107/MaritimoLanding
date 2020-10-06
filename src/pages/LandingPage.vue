@@ -4,18 +4,20 @@
       :imageSrc="firstPanel.imageSrc"
       :backgroundColor="firstPanel.color"
       :size="firstPanel.size"
-      style="padding-left: 100px; padding-rigth:100px"
     >
-      <div class="uk-flex uk-flex-center">
+      <div class=" uk-flex-wrap-reverse uk-flex-center" uk-grid>
+
         <div class="uk-width-1-2@m">
           <VueSlickCarousel v-bind="settings" :arrows="true" :dots="true">
-            <div class=""><MyCardV2/></div>
-            <div class=""><MyCardV2/></div>
-            <div class=""><MyCardV2/></div>
-            <div class=""><MyCardV2/></div>
+            <div class="uk-margin-top   " ><MyCardV2 class="uk-flex uk-flex-center"/></div>
+            <div class="uk-margin-bottom" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
+            <div class="uk-margin-top   " ><MyCardV2 class="uk-flex uk-flex-center"/></div>
+            <div class="uk-margin-bottom" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
+            <div class="uk-margin-top   " ><MyCardV2 class="uk-flex uk-flex-center"/></div>
+            <div class="uk-margin-bottom" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
           </VueSlickCarousel>
         </div>
-        <div class="uk-width-1-2@m uk-flex uk-flex-middle uk-flex-center">
+        <div class=" uk-flex uk-flex-middle uk-flex-center">
           <div >
             <div class="uk-text-center panel-text-large ">¡DESTACATÉ!</div>
             <div class="panel-subtext uk-text-center">y pauta con nosotros</div>
@@ -25,9 +27,30 @@
       </div>
     </Panel>
     <div class="uk-padding">
+
       <div class="uk-flex uk-flex-center">
-        <div>
-          <div class="uk-card uk-card-default uk-card-body">Item</div>
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+          <div class="uk-card-media-left uk-cover-container uk-flex uk-flex-center uk-flex-middle">
+            <img width="100" height="100" alt="" src="@/assets/redicon.svg" uk-svg>
+          </div>
+          <div>
+            <div class="uk-card-body">
+              <div class="uk-card-title">Seguridad y confianza</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-flex-center" uk-grid>
+        <div class="uk-width-1-5 uk-flex-center" uk-grid>
+          <div class="uk-width-1-3">
+            <img width="100" height="100" alt="" src="@/assets/redicon.svg" uk-svg>
+          </div>
+          <div class="uk-width-2-3 uk-flex uk-flex-middle uk-flex-center uk-padding-remove">
+            <div class="uk-text-large uk-text-center uk-text-bold uk-text-primary">
+              TITULO DE EJEMPLO
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -75,7 +98,7 @@ export default {
       firstPanel:{
         imageSrc: "https://images.pexels.com/photos/2935097/pexels-photo-2935097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260%202520w",
         color: "danger",
-        size: "large"
+        size: "auto"
       },
       secondPanel:{
         color: "blue",
@@ -86,12 +109,30 @@ export default {
         "infinite": true,
         "initialSlide": 2,
         "speed": 500,
+        "autoplay": true,
         "slidesToShow": 3,
         "slidesToScroll": 1,
         "swipeToSlide": true,
         "responsive": [
           {
-            "breakpoint": 1024,
+            "breakpoint": 1366,
+            "settings": {
+              "slidesToShow": 2,
+              "slidesToScroll": 2,
+              "infinite": true,
+              "dots": true
+            }
+          },
+          {
+            "breakpoint": 1100,
+            "settings": {
+              "slidesToShow": 1,
+              "slidesToScroll": 1,
+              "initialSlide": 1
+            }
+          },
+          {
+            "breakpoint": 960,
             "settings": {
               "slidesToShow": 3,
               "slidesToScroll": 3,
@@ -100,15 +141,16 @@ export default {
             }
           },
           {
-            "breakpoint": 600,
+            "breakpoint": 828,
             "settings": {
               "slidesToShow": 2,
               "slidesToScroll": 2,
-              "initialSlide": 2
+              "infinite": true,
+              "dots": true
             }
           },
           {
-            "breakpoint": 480,
+            "breakpoint": 580,
             "settings": {
               "slidesToShow": 1,
               "slidesToScroll": 1
@@ -124,13 +166,13 @@ export default {
 <style>
 
 .panel-text-large{
-  font-size: 50px;
+  font-size: 55px;
   color: white;
   font-weight:bold;
 }
 
 .panel-subtext{
-  font-size: 30px;
+  font-size: 35px;
   color: white
 }
 
@@ -138,14 +180,14 @@ export default {
     background-color: white;
     color: #FA0200;
     border: 1px solid #FA0200;
-    border-radius: 13px;
+    border-radius: 19px;
     text-transform: none;
     display: inline-block;
     padding: 0 50px;
     vertical-align: middle;
     font-size: 16px;
     font-weight: bold;
-    line-height: 30px;
+    line-height: 40px;
     text-align: center;
     text-decoration: none;
 }
