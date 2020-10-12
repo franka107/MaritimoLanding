@@ -1,16 +1,16 @@
 <template>
   <div class="mycard">
     <div class="mycard-header">
-      <div class="mycard-title">
+      <div class="mycard-title uk-text-bold">
         {{name}}
       </div>
     </div>
-    <div class="my-card-body uk-padding uk-padding-remove-bottom">
+    <div class="my-card-body uk-padding uk-padding-remove-bottom  uk-padding-remove-top" >
       <div class="mycard-price">
         <span class="mycard-currency uk-text-large uk-text-emphasis uk-text-bold">
           {{currency}}
         </span>
-        <span class="mycard-price uk-text-extralarge uk-text-emphasis uk-text-bold">
+        <span class="my-card-ammount uk-text-extralarge uk-text-emphasis uk-text-bold">
           {{price}}
         </span>
       </div>
@@ -67,6 +67,10 @@ export default {
    justify-content: center;
    align-items: center;
 }
+
+.mycard-title { 
+  font-size:20px
+}
 .mycard-button {
     background-color: white;
     color: #FA0200;
@@ -74,9 +78,9 @@ export default {
     border-radius: 13px;
     text-transform: none;
     display: inline-block;
-    padding: 0 50px;
+    padding: 0 40px;
     vertical-align: middle;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
     line-height: 30px;
     text-align: center;
@@ -88,13 +92,20 @@ export default {
     color: #fff;
     cursor: pointer;
 }
+.mycard-ammount{
+  font-size: 40px
+}
+
+
 .mycard-button:focus{
     outline: none;
 }
 .uk-text-extralarge {
-  font-size: 2.3rem
+  font-size: 2.7rem;
+  padding-top: 20px
 }
 .uk-text-medium {
   font-size: 1.3rem
 }
+
 </style>

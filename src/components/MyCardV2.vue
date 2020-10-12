@@ -19,7 +19,7 @@ export default {
   props: {
     imageSrc: {
       type: String,
-      default: 'https://images.pexels.com/photos/194094/pexels-photo-194094.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'
+      default: 'https://images.pexels.com/photos/533937/pexels-photo-533937.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
     },
     title: {
       type: String,
@@ -35,7 +35,7 @@ export default {
     },
     button: {
       type: String,
-      default: 'Ver promoción'
+      default: 'Me interesa'
     },
   }
 }
@@ -43,8 +43,11 @@ export default {
 <style>
 .mycardV2 {
   min-width: 220px;
-  max-width: 250px;
+  max-width: 255px;
   border-radius: 8px;
+  -webkit-box-shadow: 3px 4px 7px 1px rgba(0,0,0,0.4);
+  -moz-box-shadow: 3px 4px 7px 1px rgba(0,0,0,0.4);
+  box-shadow: 3px 4px 7px 1px rgba(0,0,0,0.4);
 }
 
 
@@ -59,7 +62,7 @@ export default {
     border-radius: 18px;
     text-transform: none;
     display: inline-block;
-    padding: 0 20px;
+    padding: 0 40px;
     vertical-align: middle;
     font-size: 14px;
     font-weight: bold;

@@ -8,15 +8,24 @@
       <div class=" uk-flex-wrap-reverse uk-flex-center" uk-grid>
 
         <div class="uk-width-1-2@m">
-          <VueSlickCarousel v-bind="settings" :arrows="true" :dots="true">
-            <div class="uk-margin-top   " ><MyCardV2 class="uk-flex uk-flex-center"/></div>
-            <div class="uk-margin-bottom" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
-            <div class="uk-margin-top   " ><MyCardV2 class="uk-flex uk-flex-center"/></div>
-            <div class="uk-margin-bottom" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
-            <div class="uk-margin-top   " ><MyCardV2 class="uk-flex uk-flex-center"/></div>
-            <div class="uk-margin-bottom" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
+          <VueSlickCarousel :dots="true" class="uk-padding uk-padding-remove-top uk-padding-remove-bottom" v-bind="settings" >
+            <template #nextArrow="">
+              <span class="arrow-white uk-icon uk-margin-right"  uk-icon="icon: chevron-right; ratio: 2" ></span>
+            </template>
+            <template #prevArrow="">
+              <span class="arrow-white uk-icon "  uk-icon="icon: chevron-left; ratio: 2" ></span>
+            </template>
+            <div class="mycardV2-margin-top" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
+            <div class="mycardV2-margin-bottom" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
+            <div class="mycardV2-margin-top" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
+            <div class="mycardV2-margin-bottom" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
+            <div class="mycardV2-margin-top" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
+            <div class="mycardV2-margin-bottom" ><MyCardV2 class="uk-flex uk-flex-center"/></div>
           </VueSlickCarousel>
         </div>
+        <div class="uk-margin uk-visible@l"></div>
+        <div class="uk-margin uk-visible@l"></div>
+
         <div class=" uk-flex uk-flex-middle uk-flex-center">
           <div >
             <div class="uk-text-center panel-text-large ">¡DESTACATÉ!</div>
@@ -26,7 +35,7 @@
         </div>
       </div>
     </Panel>
-    <div class="uk-padding uk-padding-remove-bottom uk-flex-center" uk-grid>
+    <div class="uk-padding uk-padding-remove-bottom uk-padding-remove-top uk-flex-center" uk-grid>
       <Slogan title="OTRO TITULO DE EJEMPLO"/>
       <Slogan/>
       <Slogan/>
@@ -63,12 +72,12 @@
     <div class="uk-padding uk-padding-remove-top uk-text-lead uk-text-center uk-text-bold">CREALA POR PRIMERA VEZ Y CONOCE TODOS NUESTROS BENEFICIOS</div>
     <div class="uk-padding uk-padding-remove-bottom uk-flex-center   "  uk-grid>
       <div class="uk-width-1-3@m">
-        <ul class="uk-list uk-list-disc uk-list-primary">
+        <ul class="uk-list uk-list-disc uk-list-danger">
           <li :key="index" v-for="(benefit, index) in benefits">{{benefit}}</li>
         </ul>
       </div>
       <div class="uk-width-1-3@m">
-        <ul class="uk-list uk-list-disc uk-list-primary">
+        <ul class="uk-list uk-list-disc uk-list-danger">
           <li :key="index" v-for="(benefit, index) in benefits">{{benefit}}</li>
         </ul>
       </div>
@@ -184,16 +193,18 @@ export default {
 
       settings: {
         "dots": true,
+        "dotsClass": "mydots ",
         "infinite": true,
         "initialSlide": 2,
         "speed": 500,
         "autoplay": true,
         "slidesToShow": 3,
-        "slidesToScroll": 1,
+        "slidesToScroll": 3,
+        "arrows": true,
         "swipeToSlide": true,
         "responsive": [
           {
-            "breakpoint": 1366,
+            "breakpoint": 1850,
             "settings": {
               "slidesToShow": 2,
               "slidesToScroll": 2,
@@ -273,6 +284,9 @@ export default {
 .mybutton--red {
     background-color: #FA0200;
     color: white ;
+    font-size: 24px;
+    line-height: 45px;
+    border-radius: 25px;
 }
 
 .mybutton--transparent {
@@ -320,4 +334,91 @@ export default {
 .whatsapp-white svg path {
   fill: white;
 }
+
+.arrow-white svg  {
+  color: white;
+  max-width: 5em;
+}
+.slick-next:before {
+  content: ''
+}
+.slick-prev:before {
+  content: '';
+}
+
+.mycardV2-margin-top {
+  margin-top: 60px
+}
+
+.mycardV2-margin-bottom {
+  margin-bottom: 60px
+}
+
+.mydots {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-top: 25px;
+  list-style: none;
+  text-align: center;
+}
+
+.mydots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.mydots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.mydots li button:before {
+    font-family: 'slick';
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 11px;
+    line-height: 13px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    content: '•';
+    text-align: center;
+    //opacity: 0.5;
+    color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mydots li.slick-active button:before {
+    color: white;
+    background-color: white
+}
+
+.uk-list-danger > ::before {
+  color: red !important;
+  font-size: 20px
+}
 </style>
+
+
+
+
+
