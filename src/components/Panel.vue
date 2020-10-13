@@ -28,7 +28,8 @@ export default {
           'muted',
           'blue',
           'secondary',
-          'primarydark'
+          'primarydark',
+          'oceanblue'
         ].indexOf(value) !== -1
       }
     },
@@ -63,6 +64,10 @@ export default {
 
 .uk-background-blue {
   background-color: blue;
+}
+
+.uk-background-oceanblue {
+  background-color: #061941;
 }
 
 .uk-height-auto {

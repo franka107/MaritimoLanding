@@ -1,7 +1,7 @@
 <template>
   <div class="mycard">
     <div class="mycard-header">
-      <div class="mycard-title">
+      <div class="mycard-title uk-text-bold">
         {{name}}
       </div>
     </div>
@@ -16,13 +16,13 @@
       </div>
       <div v-if="date" class="uk-text-center uk-text-bold  uk-text-emphasis  uk-text-medium mycard-date">{{date}}</div>
       <div class="slogan uk-margin-remove">
-          <div class="uk-flex uk-flex-center" uk-grid>
-            <div class="uk-width-1-3  uk-flex uk-flex-center uk-flex-middle">
-              <img width="40" height="40" alt="" src="https://icons555.com/images/icons-red/image_icon_whatsapp_pic_512x512.png">
+          <div class="uk-flex uk-flex-center uk-flex-middle" uk-grid>
+            <div class="  uk-flex uk-flex-center uk-flex-middle">
+              <span class="uk-align-center uk-flex uk-flex-center uk-flex-middle whatsapp-red"   uk-icon="icon: whatsapp; ratio: 1.8"></span>
             </div>
-            <div class="uk-width-2-3 uk-flex uk-flex-middle uk-flex-center uk-padding-remove">
+            <div class="uk-flex uk-flex-middle uk-flex-center uk-padding-remove">
               <div class=" uk-text-center uk-text-bold uk-text-primarydark ">
-                <button class=" uk-align-center  mycard-buttoncontact uk-margin-remove">Comienza un plan</button>
+                <button class=" uk-align-center  mycard-buttoncontact ">¡Contactar un asesor!</button>
               </div>
             </div>
           </div>
@@ -30,8 +30,10 @@
       <ul class="uk-list uk-list-disc uk-text-small uk-list-primary">
         <li :key="index" v-for="(benefit, index) in benefits">{{benefit}}</li>
       </ul>
-      <div class="uk-flex uk-flex-center">
-        <button class=" uk-align-center    mycard-button ">¡Comprar Paquete!</button>
+    </div>
+    <div class="my-card-footer uk-margin-bottom ">
+      <div class="uk-flex uk-flex-center uk-flex-bottom">
+        <button class="mycard-button ">¡Comprar Paquete!</button>
       </div>
     </div>
   </div>
@@ -71,9 +73,8 @@ export default {
 <style scoped>
 .mycard {
    border-color: #FA0200;
-   max-width: 340px;
-   min-height: 150px;
-   border: 2px solid red;
+   width: 340px;
+   border: 1px solid red;
    border-radius: 18px;
    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -87,6 +88,11 @@ export default {
    align-items: center;
    justify-content: center;
    font-size: 18px;
+}
+
+.my-card-body {
+  min-height: 400px
+  
 }
 .mycard-price { 
    display: flex;
@@ -107,6 +113,7 @@ export default {
     line-height: 30px;
     text-align: center;
     text-decoration: none;
+    
 }
 
 .mycard-button:hover{
@@ -123,12 +130,13 @@ export default {
     background-color: white;
     color: #FA0200;
     border: 1px solid #FA0200;
-    border-radius: 13px;
+    border-radius: 18px;
     text-transform: none;
     display: inline-block;
-    padding: 0 50px;
+    margin: 0 15px;
+    padding: 0 25px;
     vertical-align: middle;
-    font-size: 12px;
+    font-size: 17px;
     font-weight: bold;
     line-height: 30px;
     text-align: center;
@@ -149,5 +157,8 @@ export default {
 }
 .uk-text-medium {
   font-size: 1.3rem
+}
+
+.my-card-footer {
 }
 </style>

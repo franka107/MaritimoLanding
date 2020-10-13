@@ -47,9 +47,8 @@ export default {
    border-color: #FA0200;
    max-width: 340px;
    min-height: 150px;
-   border: 2px solid red;
+   border: 1px solid red;
    border-radius: 18px;
-   //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .mycard-header {
    height: 45px;

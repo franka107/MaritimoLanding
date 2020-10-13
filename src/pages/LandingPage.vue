@@ -30,7 +30,7 @@
           <div >
             <div class="uk-text-center panel-text-large ">¡DESTACATÉ!</div>
             <div class="panel-subtext uk-text-center">y pauta con nosotros</div>
-            <button class=" uk-align-center    mybutton ">QUIERO DESTACARME</button>
+            <button class=" uk-align-center mybutton mybutton-white">QUIERO DESTACARME</button>
           </div>
         </div>
       </div>
@@ -82,17 +82,23 @@
         </ul>
       </div>
     </div>
-    <button class=" uk-align-center mybutton mybutton--red ">Crear Cuenta</button>
+    <button class=" uk-align-center mybutton mybutton--red ">¡Crear Cuenta!</button>
     <Panel 
       :backgroundColor="thirdPanel.color"
       :size="thirdPanel.size"
       imageSrc=""
     >
       <div class="uk-padding uk-padding-remove-bottom uk-padding-remove-top uk-flex-center   "  uk-grid>
-        <div><span class="uk-icon-button" uk-icon="icon: chevron-right; ratio: 2"></span></div>
-        <div class=" uk-text-large uk-flex uk-flex-middle  uk-text-center uk-text-bold uk-text-light uk-margin-right uk-margin-left">¿Cómo crear mi cuenta y destacar mi anuncio?</div>
+        <div class=" uk-text-large uk-flex uk-flex-middle  uk-text-center uk-text-bold uk-text-light uk-margin-right uk-margin-left">
+          <div> 
+            <span class="uk-visible@m" uk-icon="icon: chevron-right; ratio: 2"></span>
+          </div>
+          <div> 
+            ¿Cómo crear mi cuenta y destacar mi anuncio?
+          </div>
+        </div>
         <div>
-          <button class="uk-margin-remove  uk-align-center mybutton mybutton--red ">Saber más</button>
+          <button class="uk-margin-remove  uk-align-center mybutton mybutton--red ">¡Ver Ahora!</button>
         </div>
       </div>
     </Panel>
@@ -101,13 +107,27 @@
       :size="fourthPanel.size"
       :imageSrc="fourthPanel.imageSrc"
       class="panel-shortmargin"
-    ></Panel>
+    >
+      <div class="uk-flex uk-flex-center" uk-grid>
+        <div>
+          <img src="https://lh3.googleusercontent.com/proxy/Iw_S1k-7OAnQ0hpjO0cBdpdF6YSK0ZV1PCkJYsgNsQu_ULCmuLeUYuoew9rJs4-AdB22ZYAvg6Y0STlU_zOIBfp13Z2J7jhDAYssIzmNRiwl_kmRQJK-PRzlbzij-vCDTg" alt="">  
+        </div>
+        <div class=" uk-flex uk-flex-column uk-flex-wrap-stretch	">
+            <div class="panel-subtext uk-text-center">Conoce nuestros planes</div>
+            <div class="uk-text-center panel-text-large ">DE CONTENIDO</div>
+            <div class="uk-text-center panel-text-large ">DIGITAL</div>
+            <button class=" uk-align-center mybutton mybutton-white ">CONOCER PLANES</button>
+        </div>
+      </div>
+    </Panel>
     <div class="uk-padding">
       <div class="uk-padding uk-padding-remove-top uk-text-lead uk-text-center uk-text-bold">OTROS PLANES - CONTENIDOS</div>
-      <div class="uk-padding uk-padding-remove-top uk-padding-remove-bottom  uk-text-center ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </div>
       <div class="uk-padding uk-padding-remove-top uk-padding-remove-bottom  uk-text-center ">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-        <span class="uk-text-bold">text of the printing and typesetting industry. </span>
+        Te ofrecemos todas nuestras plataformas digitales:
+      </div>
+      <div class="uk-padding uk-padding-remove-top uk-padding-remove-bottom  uk-text-center ">
+        Redes sociales, Web, Blog y Mailing para darte a conocer y
+        <span class="uk-text-bold"> mejorar tu alcance con tus clientes potenciales. </span>
       </div>
     </div>
     <div class="uk-padding  uk-flex-center   "  uk-grid>
@@ -169,13 +189,13 @@ export default {
         size: "auto"
       },
       thirdPanel:{
-        color: "primarydark",
+        color: "oceanblue",
         size: "auto"
       },
       fourthPanel:{
         imageSrc: "https://images.pexels.com/photos/2935097/pexels-photo-2935097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260%202520w",
         color: "danger",
-        size: "large"
+        size: "auto"
       },
       fifthPanel:{
         imageSrc: "https://images.pexels.com/photos/2935097/pexels-photo-2935097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260%202520w",
@@ -284,8 +304,8 @@ export default {
 .mybutton--red {
     background-color: #FA0200;
     color: white ;
-    font-size: 24px;
-    line-height: 45px;
+    font-size: 20px;
+    line-height: 35px;
     border-radius: 25px;
 }
 
@@ -333,6 +353,10 @@ export default {
 }
 .whatsapp-white svg path {
   fill: white;
+}
+
+.whatsapp-red svg path {
+  fill: red;
 }
 
 .arrow-white svg  {
@@ -415,6 +439,10 @@ export default {
 .uk-list-danger > ::before {
   color: red !important;
   font-size: 20px
+}
+
+.mybutton-white {
+  border: none;
 }
 </style>
 
