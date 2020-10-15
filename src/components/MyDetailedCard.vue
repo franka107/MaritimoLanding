@@ -44,7 +44,7 @@ export default {
   props: {
     name: {
       type:String,
-      default: 'PAQUETE 0'
+      default: 'PLAN 0'
     },
     price: {
       type:String,

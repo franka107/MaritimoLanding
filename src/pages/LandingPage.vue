@@ -7,7 +7,7 @@
     >
       <div class=" uk-flex-wrap-reverse uk-flex-center" uk-grid>
 
-        <div class="uk-width-1-2@m">
+        <div class=" mainpanel__carousel">
           <VueSlickCarousel :dots="true" class="uk-padding uk-padding-remove-top uk-padding-remove-bottom" v-bind="settings" >
             <template #nextArrow="">
               <span class="arrow-white uk-icon uk-margin-right"  uk-icon="icon: chevron-right; ratio: 2" ></span>
@@ -46,7 +46,7 @@
     <div class="uk-padding">
       <div class="uk-padding uk-padding-remove-top uk-text-lead uk-text-center uk-text-bold">ANUNCIOS DESTACADOS</div>
       <div class="uk-flex uk-flex-center">
-        <div class="uk-width-1-2@m">
+        <div class="description__paragraph">
           <div class="uk-text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
         </div>
       </div>
@@ -224,7 +224,7 @@ export default {
         "swipeToSlide": true,
         "responsive": [
           {
-            "breakpoint": 1850,
+            "breakpoint": 1800,
             "settings": {
               "slidesToShow": 2,
               "slidesToScroll": 2,
@@ -235,13 +235,13 @@ export default {
           {
             "breakpoint": 1100,
             "settings": {
-              "slidesToShow": 1,
+              "slidesToShow": 2,
               "slidesToScroll": 1,
               "initialSlide": 1
             }
           },
           {
-            "breakpoint": 960,
+            "breakpoint": 1074,
             "settings": {
               "slidesToShow": 3,
               "slidesToScroll": 3,
@@ -250,7 +250,7 @@ export default {
             }
           },
           {
-            "breakpoint": 828,
+            "breakpoint": 931,
             "settings": {
               "slidesToShow": 2,
               "slidesToScroll": 2,
@@ -259,7 +259,7 @@ export default {
             }
           },
           {
-            "breakpoint": 580,
+            "breakpoint": 881,
             "settings": {
               "slidesToShow": 1,
               "slidesToScroll": 1
@@ -316,11 +316,11 @@ export default {
     border-radius: 19px;
     text-transform: none;
     display: inline-block;
-    padding: 0 50px;
+    padding: 0 60px;
     vertical-align: middle;
     font-size: 16px;
     font-weight: bold;
-    line-height: 40px;
+    line-height: 30px;
     text-align: center;
     text-decoration: none;
 }
@@ -443,6 +443,37 @@ export default {
 
 .mybutton-white {
   border: none;
+}
+
+.mainpanel__carousel {
+  max-width: 900px ;
+  min-width: 400px
+}
+
+@media screen and (min-width: 1800px) {
+  .description__paragraph {
+    max-width: 1100px
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .mainpanel__carousel {
+    max-width: 620px ;
+  }
+  .description__paragraph {
+    max-width: 1100px
+  }
+}
+
+@media screen and (max-width: 1074px) {
+  .mainpanel__carousel {
+    max-width: 100% ;
+  }
+}
+@media screen and (max-width: 931px) {
+  .mainpanel__carousel {
+    max-width: 70% ;
+  }
 }
 </style>
 
