@@ -77,7 +77,7 @@
         </ul>
       </div>
       <div class="uk-width-1-3@m">
-        <ul class="uk-list uk-list-disc uk-list-danger">
+        <ul class="uk-list  uk-list-danger">
           <li :key="index" v-for="(benefit, index) in benefits">{{benefit}}</li>
         </ul>
       </div>
